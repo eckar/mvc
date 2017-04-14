@@ -1,0 +1,95 @@
+root { 
+    display: block;
+}
+
+body {
+    font-family: "Century Gothic";
+    color: #FFFFFF;
+    font-size: large;
+    text-align: center;
+    background: rgba(169,3,41,1);
+    background: -moz-linear-gradient(left, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 50%, rgba(109,0,25,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(169,3,41,1)), color-stop(50%, rgba(143,2,34,1)), color-stop(100%, rgba(109,0,25,1)));
+    background: -webkit-linear-gradient(left, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 50%, rgba(109,0,25,1) 100%);
+    background: -o-linear-gradient(left, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 50%, rgba(109,0,25,1) 100%);
+    background: -ms-linear-gradient(left, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 50%, rgba(109,0,25,1) 100%);
+    background: linear-gradient(to right, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 50%, rgba(109,0,25,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=1 );    
+}
+
+a {
+    color: #150404;
+    font-size: large;
+}
+
+table {
+    empty-cells: show;
+    margin: auto;
+}
+
+form.jsfcrud_list_form th, td th {
+    font-size: medium;
+    color: #80141C;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #b27988;
+    border-bottom-color: #b27988;
+    border-left-color: #700a12;
+    border-right-color: #700a12;
+    letter-spacing: 3px;
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: #F7CDCD;
+    
+}
+        
+td {
+    vertical-align: top;
+    padding-bottom: 8px;
+    font-size: medium;
+}
+
+form.jsfcrud_list_form td, td td {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #b27988;
+    border-bottom-color: #b27988;
+    border-left-color: #700a12;
+    border-right-color: #700a12;
+    vertical-align: baseline;
+    padding-bottom: 0px;
+}
+
+tr.jsfcrud_odd_row {
+    background-color: #fefeff;
+    color: #80141C;
+}
+
+
+tr.jsfcrud_even_row {
+    background-color: #F7CDCD;
+    color: #80141C;
+}
+
+#busyImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+
+}

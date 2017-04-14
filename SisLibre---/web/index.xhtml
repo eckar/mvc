@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Sistema de Informacion para la Unilibre
+    <p:breadCrumb>
+        <p:menuitem value="Parametrizacion" url="index.xhtml" />
+        <p:menuitem value="Parametrizacion" url="parametros.xhtml" />
+        <p:menuitem value="Investigaciones" url="#" />
+        <p:menuitem value="Proyectos" url="#" />
+    </p:breadCrumb>
+        <p:growl id="msj" autoUpdate="true"/>    
+        <h:form>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="txtCodigo" value="Código Area Conocimiento" />
+                <p:inputText id ="txtCodigo" value="#{areasConBean.areacon.codigo}" required="true" />
+                <p:outputLabel for="txtNombreArea" value="Nombre Area Conocimiento" />
+                <p:inputText id ="txtNombreArea" value="#{areasConBean.areacon.nombre}" required="true" />
+                <h:column />
+                <p:commandButton value="Crear" actionListener="#{areasConBean.crear()}" />
+             </h:panelGrid>   
+        </h:form>
+        
+    </h:body>
+</html>
+

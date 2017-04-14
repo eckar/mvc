@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewUsuariosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewUsuariosLabel_idusuario}"/>
+                    <h:outputText value="#{usuariosController.selected.idusuario}" title="#{bundle.ViewUsuariosTitle_idusuario}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosLabel_nombreUsuario}"/>
+                    <h:outputText value="#{usuariosController.selected.nombreUsuario}" title="#{bundle.ViewUsuariosTitle_nombreUsuario}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosLabel_edad}"/>
+                    <h:outputText value="#{usuariosController.selected.edad}" title="#{bundle.ViewUsuariosTitle_edad}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosLabel_profesion}"/>
+                    <h:outputText value="#{usuariosController.selected.profesion}" title="#{bundle.ViewUsuariosTitle_profesion}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosLabel_prestamoLibro}"/>
+                    <h:outputText value="#{usuariosController.selected.prestamoLibro}" title="#{bundle.ViewUsuariosTitle_prestamoLibro}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usuariosController.destroyAndView}" value="#{bundle.ViewUsuariosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewUsuariosEditLink}"/>
+                <br />
+                <h:commandLink action="#{usuariosController.prepareCreate}" value="#{bundle.ViewUsuariosCreateLink}" />
+                <br />
+                <h:commandLink action="#{usuariosController.prepareList}" value="#{bundle.ViewUsuariosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewUsuariosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

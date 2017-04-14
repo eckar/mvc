@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditUsuariosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_idusuario}" for="idusuario" />
+                    <h:inputText id="idusuario" value="#{usuariosController.selected.idusuario}" title="#{bundle.EditUsuariosTitle_idusuario}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_idusuario}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_nombreUsuario}" for="nombreUsuario" />
+                    <h:inputText id="nombreUsuario" value="#{usuariosController.selected.nombreUsuario}" title="#{bundle.EditUsuariosTitle_nombreUsuario}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_nombreUsuario}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_edad}" for="edad" />
+                    <h:inputText id="edad" value="#{usuariosController.selected.edad}" title="#{bundle.EditUsuariosTitle_edad}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_edad}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_profesion}" for="profesion" />
+                    <h:inputText id="profesion" value="#{usuariosController.selected.profesion}" title="#{bundle.EditUsuariosTitle_profesion}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_profesion}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_prestamoLibro}" for="prestamoLibro" />
+                    <h:selectOneMenu id="prestamoLibro" value="#{usuariosController.selected.prestamoLibro}" title="#{bundle.EditUsuariosTitle_prestamoLibro}" >
+                        <f:selectItems value="#{prestamoLibroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{usuariosController.update}" value="#{bundle.EditUsuariosSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditUsuariosViewLink}"/>
+                <br />
+                <h:commandLink action="#{usuariosController.prepareList}" value="#{bundle.EditUsuariosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditUsuariosIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
