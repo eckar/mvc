@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewLibrosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewLibrosLabel_codigoLibro}"/>
+                    <h:outputText value="#{librosController.selected.codigoLibro}" title="#{bundle.ViewLibrosTitle_codigoLibro}"/>
+                    <h:outputText value="#{bundle.ViewLibrosLabel_codigoIsbn}"/>
+                    <h:outputText value="#{librosController.selected.codigoIsbn}" title="#{bundle.ViewLibrosTitle_codigoIsbn}"/>
+                    <h:outputText value="#{bundle.ViewLibrosLabel_nombreLibro}"/>
+                    <h:outputText value="#{librosController.selected.nombreLibro}" title="#{bundle.ViewLibrosTitle_nombreLibro}"/>
+                    <h:outputText value="#{bundle.ViewLibrosLabel_autor}"/>
+                    <h:outputText value="#{librosController.selected.autor}" title="#{bundle.ViewLibrosTitle_autor}"/>
+                    <h:outputText value="#{bundle.ViewLibrosLabel_cantPaginas}"/>
+                    <h:outputText value="#{librosController.selected.cantPaginas}" title="#{bundle.ViewLibrosTitle_cantPaginas}"/>
+                    <h:outputText value="#{bundle.ViewLibrosLabel_areaConocimiento}"/>
+                    <h:outputText value="#{librosController.selected.areaConocimiento}" title="#{bundle.ViewLibrosTitle_areaConocimiento}"/>
+                    <h:outputText value="#{bundle.ViewLibrosLabel_prestamoLibro}"/>
+                    <h:outputText value="#{librosController.selected.prestamoLibro}" title="#{bundle.ViewLibrosTitle_prestamoLibro}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{librosController.destroyAndView}" value="#{bundle.ViewLibrosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewLibrosEditLink}"/>
+                <br />
+                <h:commandLink action="#{librosController.prepareCreate}" value="#{bundle.ViewLibrosCreateLink}" />
+                <br />
+                <h:commandLink action="#{librosController.prepareList}" value="#{bundle.ViewLibrosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewLibrosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

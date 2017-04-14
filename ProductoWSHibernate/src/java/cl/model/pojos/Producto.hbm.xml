@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/08/2016 03:48:17 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="cl.model.pojos.Producto" table="producto" catalog="crud">
+        <id name="codigo" type="java.lang.Integer">
+            <column name="codigo" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="30" not-null="true" />
+        </property>
+        <property name="precio" type="int">
+            <column name="precio" not-null="true" />
+        </property>
+        <property name="stock" type="int">
+            <column name="stock" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="40" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

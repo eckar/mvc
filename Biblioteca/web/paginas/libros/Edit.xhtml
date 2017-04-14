@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditLibrosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditLibrosLabel_codigoLibro}" for="codigoLibro" />
+                    <h:inputText id="codigoLibro" value="#{librosController.selected.codigoLibro}" title="#{bundle.EditLibrosTitle_codigoLibro}" required="true" requiredMessage="#{bundle.EditLibrosRequiredMessage_codigoLibro}"/>
+                    <h:outputLabel value="#{bundle.EditLibrosLabel_codigoIsbn}" for="codigoIsbn" />
+                    <h:inputText id="codigoIsbn" value="#{librosController.selected.codigoIsbn}" title="#{bundle.EditLibrosTitle_codigoIsbn}" required="true" requiredMessage="#{bundle.EditLibrosRequiredMessage_codigoIsbn}"/>
+                    <h:outputLabel value="#{bundle.EditLibrosLabel_nombreLibro}" for="nombreLibro" />
+                    <h:inputText id="nombreLibro" value="#{librosController.selected.nombreLibro}" title="#{bundle.EditLibrosTitle_nombreLibro}" required="true" requiredMessage="#{bundle.EditLibrosRequiredMessage_nombreLibro}"/>
+                    <h:outputLabel value="#{bundle.EditLibrosLabel_autor}" for="autor" />
+                    <h:inputText id="autor" value="#{librosController.selected.autor}" title="#{bundle.EditLibrosTitle_autor}" required="true" requiredMessage="#{bundle.EditLibrosRequiredMessage_autor}"/>
+                    <h:outputLabel value="#{bundle.EditLibrosLabel_cantPaginas}" for="cantPaginas" />
+                    <h:inputText id="cantPaginas" value="#{librosController.selected.cantPaginas}" title="#{bundle.EditLibrosTitle_cantPaginas}" required="true" requiredMessage="#{bundle.EditLibrosRequiredMessage_cantPaginas}"/>
+                    <h:outputLabel value="#{bundle.EditLibrosLabel_areaConocimiento}" for="areaConocimiento" />
+                    <h:inputText id="areaConocimiento" value="#{librosController.selected.areaConocimiento}" title="#{bundle.EditLibrosTitle_areaConocimiento}" required="true" requiredMessage="#{bundle.EditLibrosRequiredMessage_areaConocimiento}"/>
+                    <h:outputLabel value="#{bundle.EditLibrosLabel_prestamoLibro}" for="prestamoLibro" />
+                    <h:selectOneMenu id="prestamoLibro" value="#{librosController.selected.prestamoLibro}" title="#{bundle.EditLibrosTitle_prestamoLibro}" >
+                        <f:selectItems value="#{prestamoLibroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{librosController.update}" value="#{bundle.EditLibrosSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditLibrosViewLink}"/>
+                <br />
+                <h:commandLink action="#{librosController.prepareList}" value="#{bundle.EditLibrosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditLibrosIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
